@@ -21,7 +21,7 @@ export function ALoop () {
                     fakeMap.map((keyPop) => {
                         return(
                             <div key={keyPop}>
-                            <B makeloop={false}/>
+                            <B makeLoop={true}/>
                             </div>
                         );
                     })

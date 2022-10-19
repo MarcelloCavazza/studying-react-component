@@ -22,7 +22,7 @@ export function A (){
                     listOfB.map((keyPop) => {
                         return (
                             <div key={keyPop    }>
-                            <B />
+                            <B makeLoop={false}/>
                             </div>
                             );
                     })
