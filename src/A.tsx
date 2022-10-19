@@ -3,10 +3,10 @@ import { B } from "./B";
 
 export class A extends Component {
     constructor(props: any) {
-        super(props)
+        super(props);
         this.state = {
-            components: []
-        }
+            components: [],
+        };
     }
     render() {
         return (
@@ -19,17 +19,20 @@ export class A extends Component {
                     overflowY: "auto",
                     height: "600px",
                     overflowX: "hidden",
-                }
-                }
+                }}
             >
                 <b>Componente A</b>
-                <button onClick={() => this.setState({ components: [...this.state.components, <B />] })}>Criar componente</button>
-                {
-                    this.state.components.map(() => {
-                        return <B />;
-                    })
-                }
-            </div >
+                <button
+                    onClick={() =>
+                        this.setState({ components: [...this.state.components, <B />] })
+                    }
+                >
+                    Criar componente
+                </button>
+                {this.state.components.map(() => {
+                    return <B />;
+                })}
+            </div>
         );
     }
 }
