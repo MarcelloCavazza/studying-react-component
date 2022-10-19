@@ -7,11 +7,8 @@ export class ClickableContent extends Component {
             count: 0
         };
     }
-    componentDidMount(){
-        alert('componente criado')
-        setInterval(()=>{
-            this.setState({count: this.state.count + 1})
-        }, 1000)
+    getSnapshotBeforeUpdate(prevProps, prevState) {
+        alert("Before the update, the favorite was " + prevState.count);
     }
     render() {
         return (
