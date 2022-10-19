@@ -7,6 +7,11 @@ export class ClickableContent extends Component {
             count: 0
         };
     }
+    componentDidMount(){
+        setInterval(()=>{
+            this.setState({count: this.state.count + 1})
+        }, 1000)
+    }
     render() {
         return (
             <div style={{ border: "1px solid pink", padding: "10px" }}>
