@@ -6,7 +6,7 @@ export class B extends Component {
     render() {
         return (
             <div>
-                <div style={{ border: "1px solid pink", padding: "10px" }}>
+                <div style={{ border: "1px solid blue", padding: "10px" }}>
                     <div>Componente B</div>
 
                     <ClickableContent />

@@ -2,8 +2,12 @@ import { Component } from "react";
 import { B } from "./B";
 
 export class A extends Component {
-    private variableLength = [0, 1, 2, 4];
-
+    constructor(props: any) {
+        super(props)
+        this.state = {
+            components: []
+        }
+    }
     render() {
         return (
             <div
@@ -12,13 +16,20 @@ export class A extends Component {
                     padding: "10px",
                     minWidth: "250px",
                     maxWidth: "250px",
-                }}
+                    overflowY: "auto",
+                    height: "600px",
+                    overflowX: "hidden",
+                }
+                }
             >
                 <b>Componente A</b>
-                {this.variableLength.map((i) => {
-                    return <B />;
-                })}
-            </div>
+                <button onClick={() => this.setState({ components: [...this.state.components, <B />] })}>Criar componente</button>
+                {
+                    this.state.components.map(() => {
+                        return <B />;
+                    })
+                }
+            </div >
         );
     }
 }
