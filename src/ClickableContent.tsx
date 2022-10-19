@@ -1,4 +1,4 @@
-import { useState} from "react";
+import { useEffect, useState} from "react";
 
 export function ClickableContent(){ 
     const [counter, setCounter] = useState(0)

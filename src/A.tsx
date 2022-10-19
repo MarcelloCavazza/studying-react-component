@@ -1,15 +1,9 @@
-import { Component } from "react";
+import { Component, useState} from "react";
 import { B } from "./B";
 
-export class A extends Component {
-    constructor(props: any) {
-        super(props)
-        this.state = {
-            components: []
-        }
-    }
-    render() {
-        return (
+export function A (){
+    const [listOfB, setListOfB] = useState([])
+    return (
             <div
                 style={{
                     border: "1px solid red",
@@ -23,13 +17,16 @@ export class A extends Component {
                 }
             >
                 <b>Componente A</b>
-                <button onClick={() => this.setState({ components: [...this.state.components, <B />] })}>Criar componente</button>
+                <button onClick={() =>  setListOfB([...listOfB, <B />] )}>Criar componente</button>
                 {
-                    this.state.components.map(() => {
-                        return <B />;
+                    listOfB.map((keyPop) => {
+                        return (
+                            <div key={keyPop    }>
+                            <B />
+                            </div>
+                            );
                     })
                 }
             </div >
         );
-    }
 }
