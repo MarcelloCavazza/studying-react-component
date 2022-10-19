@@ -8,6 +8,7 @@ export class ClickableContent extends Component {
         };
     }
     componentDidMount(){
+        alert('componente criado')
         setInterval(()=>{
             this.setState({count: this.state.count + 1})
         }, 1000)
